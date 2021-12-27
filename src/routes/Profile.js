@@ -2,7 +2,7 @@ import React from "react";
 import { auth } from "fbase";
 import { useNavigate } from "react-router-dom";
 
-export default () => {
+const Profile = () => {
     const navigate = useNavigate();
     const onLogOutClick = () => {
       auth.signOut();
@@ -14,4 +14,6 @@ export default () => {
    <button onClick={onLogOutClick}>로그아웃</button>
    </>
    );
-};
+};   
+
+export default Profile;
