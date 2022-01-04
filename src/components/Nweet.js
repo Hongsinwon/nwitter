@@ -1,6 +1,7 @@
 import React from "react";
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc }from"firebase/firestore";
+import { deleteObject, ref } from "@firebase/storage";
 import { useState } from "react/cjs/react.development";
 
 //isOwner는 다이나믹한 props이고 true & false가 될 수 있다.
@@ -10,10 +11,12 @@ const Nweet = ({nweetObj, isOwner}) => {
   const [newNweet, setNewNweet] = useState(nweetObj.text);
 
   const onDeleteClick = async () => {
+    //먼저 user를 확인하고 nweet를 지우길 원하는지 확인한다. 
     const ok = window.confirm("정말로 nweet을 삭제하시겠습니까?");
     if(ok) {
-      const NweetTextRef = doc(dbService, "nweets", `${nweetObj.id}`);
-      await deleteDoc(NweetTextRef);
+      await deleteDoc(doc(dbService, "nweets", `${nweetObj.id}`));
+    nweetObj.previewUrl &&
+    (await deleteObject(ref(storageService, nweetObj.previewUrl)));
     }
   }
 
@@ -55,6 +58,7 @@ const onChange = (event) => {
       ) :(
       <>
         <h4>{nweetObj.text}</h4>
+        {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} width="50px" height="50px"/>}
       {isOwner && (
       <>
         <button onClick={onDeleteClick}>삭제</button> 

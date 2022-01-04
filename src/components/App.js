@@ -16,11 +16,10 @@ function App() {
       setInit(true);
     })
   }, [])
-
+  //<footer>&copy; {new Date().getFullYear()} Nwitter</footer>
   return (
     <>
   {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "Initializing... ..."}
-  <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
   </>
   )
 }
