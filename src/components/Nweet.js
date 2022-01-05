@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc }from"firebase/firestore";
 import { deleteObject, ref } from "@firebase/storage";
-import { useState } from "react/cjs/react.development";
 
 //isOwner는 다이나믹한 props이고 true & false가 될 수 있다.
 const Nweet = ({nweetObj, isOwner}) => {
