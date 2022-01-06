@@ -10,9 +10,11 @@ import { updateProfile } from "@firebase/auth";
 const Profile = ({refreshUser, userObj}) => {
     const navigate = useNavigate();
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName)
+    
     const onLogOutClick = () => {
       auth.signOut();
       navigate("/");
+      
   };
 
   const getMyNweets = async() => {
