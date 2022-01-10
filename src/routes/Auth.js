@@ -1,7 +1,16 @@
 import React from "react"; 
 import AuthForm from "components/AuthForm"
 import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitter,
+  faGoogle,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
+
+//* 로그인 페이지 */
+//AuthForm => 
 const Auth = () => {
 
   const onSocislClick = async (event) => {
@@ -21,11 +30,12 @@ const Auth = () => {
     }
   }
   return (
-  <div>
+  <div className="login">
+    <h1><FontAwesomeIcon icon={faTwitter} /></h1>
     <AuthForm />
-    <div>
-      <button onClick={onSocislClick} name="google">Google로 간편 로그인</button>
-      <button onClick={onSocislClick} name="github">GitHub로 간편 로그인</button>
+    <div className="authBtns">
+      <button onClick={onSocislClick} name="google" className="authBtn"><FontAwesomeIcon icon={faGoogle} /> Google로 간편 로그인</button>
+      <button onClick={onSocislClick} name="github" className="authBtn"> <FontAwesomeIcon icon={faGithub} /> GitHub로 간편 로그인</button>
     </div> 
   </div>
 )

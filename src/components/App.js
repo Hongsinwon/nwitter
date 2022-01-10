@@ -17,6 +17,7 @@ function App() {
           displayName: user.displayName,
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
+         // date: date.toString();
         });
       } else {
         setUserObj(null);

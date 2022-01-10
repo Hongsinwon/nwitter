@@ -1,6 +1,7 @@
 import React, { useState } from "react"; 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 
+
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +44,7 @@ const AuthForm = () => {
 
   return (
   <>
-  <form onSubmit={onSubmit}>
+  <form onSubmit={onSubmit} className="container">
 
 <input 
 name="email"
@@ -62,10 +63,10 @@ value={password}
 onChange={onChange}  
 required />
 
-<input type="submit" value={newAccount ? "새 계정 만들기" : "로그인"}/>
+<input className="loginbtn" type="submit" value={newAccount ? "새 계정 만들기" : "로그인"}/>
 {error}
 </form>
-<span onClick={toggleAccount}>{newAccount ? "로그인" : "새 계정 만들기"}</span>
+<span className="loginspan" onClick={toggleAccount}>{newAccount ? "로그인" : "새 계정 만들기"}</span>
   </>
   )}
 

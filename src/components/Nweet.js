@@ -5,6 +5,7 @@ import { deleteObject, ref } from "@firebase/storage";
 
 //isOwner는 다이나믹한 props이고 true & false가 될 수 있다.
 const Nweet = ({nweetObj, isOwner}) => {
+
   //editing는 기본적으로 nweet를 수정하고 있는지 아닌지를 뜻한다.
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);

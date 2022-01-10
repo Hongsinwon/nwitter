@@ -8,6 +8,7 @@ import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 const Home = ({ userObj }) => {
   const [nweets, setNweets] =useState([]);
 
+
   useEffect(() =>{
     const q = query(collection(dbService, 'nweets'), orderBy("createdAt", "desc"));
     //onSnapshot은 기본적으로 데이터베이스에 무슨일이 있을 때 알림을 받는 것.
@@ -20,17 +21,21 @@ const Home = ({ userObj }) => {
         });
         }, []);
 
-
   return (
     <>
     <div>
       <NweetFactory userObj={userObj} />
       {nweets.map(nweet => (
+      <>
+      <p>{userObj.displayName}님</p>
+      <p>{userObj.date}</p>
       <Nweet 
       key={nweet.id} 
+      userName={userObj.displayName}
       nweetObj={nweet} 
       isOwner={nweet.creatorId === userObj.uid}
       />
+      </>
         )
       )}
     </div>

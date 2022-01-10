@@ -3,11 +3,15 @@ import { dbService, storageService } from "fbase";
 import {v4 as uuidv4} from "uuid";
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadString, getDownloadURL } from "@firebase/storage";
+import { useEffect } from "react/cjs/react.development";
 
 
 const NweerFactory = ({userObj}) => {
 const [nweet, setNweet] = useState("");
 const [attachment, setAttachment] = useState("");
+
+const day = new Date();
+const totalDay = day.getFullYear() + "년 " + (day.getMonth()+1) + "월 " + day.getDate() + "일 " +  '일월화수목금토'.charAt(day.getUTCDay())+'요일'
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -22,16 +26,21 @@ const [attachment, setAttachment] = useState("");
      attachmentUrl = await getDownloadURL(response.ref);
     }
 
+
     const nweetObj = {
       text: nweet,
       createdAt: Date.now(),
       creatorId : userObj.uid,
-      attachmentUrl
+      attachmentUrl,
+      date: totalDay
     }
+
+
     await addDoc(collection(dbService, "nweets"), nweetObj);
     setNweet(""); 
     setAttachment("");
   }
+
 
   const onChange = (event) => {
     const {
@@ -67,11 +76,11 @@ const [attachment, setAttachment] = useState("");
   maxLength={140}
   />
   <input type="file" accept="image/*" onChange={onFileChange} />
-  <input type="submit" value="Nweet"/>
+  <input type="submit" value="작성"/>
   {attachment && (
   <div>
     <img src={attachment} width="50px" height="50px"/>
-    <button onClick={onClearAttachment}>Clear</button>
+    <button onClick={onClearAttachment}>이미지 취소</button>
   </div>
   )}
 </form>
