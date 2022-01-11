@@ -10,7 +10,7 @@ const Navigation = ({userObj}) => {
   return (
     <nav className="nav">
       <ul className="nav-list">
-        <li><Link to ="/"> <FontAwesomeIcon icon={faTwitter} /> Home</Link></li>
+        <li><Link to ="/"> <FontAwesomeIcon icon={faTwitter} /></Link></li>
         <li><Link to ="/profile">{userObj.displayName}님 Profile</Link></li>
       </ul>
     </nav>

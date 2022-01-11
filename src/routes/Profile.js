@@ -48,7 +48,7 @@ const Profile = ({refreshUser, userObj}) => {
 
    return (
    <>
-   <form onSubmit={onSubmit}>
+   <form onSubmit={onSubmit} className="logout">
      <input 
      value={newDisplayName}
      onChange={onChange}
@@ -57,7 +57,7 @@ const Profile = ({refreshUser, userObj}) => {
      />
      <input type="submit" value="저장" />
    </form>
-   <button onClick={onLogOutClick}>로그아웃</button>
+   <button className="logoutbtn" onClick={onLogOutClick}>로그아웃</button>
    </>
    );
 };   

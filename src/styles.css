@@ -1,4 +1,4 @@
-* {  margin: 0;  padding: 0; box-sizing: border-box; }
+* { margin: 0 auto; padding: 0; box-sizing: border-box; }
 
 body {
   background-color: #222;
@@ -9,7 +9,7 @@ body {
 }
 
 /* input 속성 */
-form {width: 100%;}
+/* form {width: 100%;} */
 input { all: unset; box-sizing: border-box; appearance: none;}
 
 /* 리스트 속성 */
@@ -20,15 +20,15 @@ a { text-decoration: none; color: inherit;}
 button { background-color: white; color: black;}
 
 /* login 페이지 */
-/*1. App.js */
-.Initializing { position: fixed; top: 50%; left: 50%;  font-weight : bold; color: rgb(0, 110, 255);  font-size: 20px; transform: translate(-50%, -50%); }
+/*0. App.js */
+.Initializing { position: fixed; top: 50%; left: 50%;  font-weight : bold; color: rgb(0, 110, 255);  font-size: 20px; transform: translate(-50%, -50%); text-align: center;}
 
 /* 1. Auth.js */
 .login { display : flex; flex-direction: column; align-items :center}
-.logo {  margin-top : 120px; font-size: 36px;  color: rgb(0, 110, 255);}
+.logo {  margin-top : 120px; font-size: 36px;  color: rgb(0, 110, 255); text-align: center;}
 /* Auth.js -google / github 간편로그인 */
-.authBtns {  margin-top: 36px;  display: flex;  flex-direction:column; width: 100%;  max-width: 320px; }
-.authBtn { height:40px; line-height:40px; border-radius:5px; border:none; font-style: 18px; color:#fff; transition : all .5s; cursor:pointer}
+.authBtns {  margin-top: 48px;  display: flex;  flex-direction:column; width: 100%;  max-width: 320px; }
+.authBtn { height:40px; line-height:40px; width: 320px; border-radius:5px; border:none; font-style: 18px; color:#fff; transition : all .5s; cursor:pointer}
 .authBtn:first-child {background : #ddd; color:#000;} .authBtn:first-child:hover {background : #fff;}
 .authBtn:last-child {margin-top: 12px; background : #000;} .authBtn:last-child:hover {background : #111;}
 
@@ -43,10 +43,27 @@ button { background-color: white; color: black;}
 }
 .container input.loginbtn:hover {background-color : rgb(0, 110, 255);}
 /*새계정 만들기 / 로그인 작은 Btn  */
-.loginspan {margin-top : 48px;  height: 30px; line-height: 30px; text-align: center; border-bottom : 1px solid rgb(101, 150, 255); color: rgb(101, 150, 255); cursor : pointer; transition : all 0.5s }
+.loginspan {margin-top : 48px;  height: 30px; width:100px; line-height: 30px; text-align: center; border-bottom : 1px solid rgb(101, 150, 255); color: rgb(101, 150, 255); cursor : pointer; transition : all 0.5s }
 .loginspan:hover { color : #fff; border-bottom : 1px solid #fff;}
 
-/* Navigation.js - 상단 Home / Profile */
-.nav { width: 100%;  height: 50px; }
-.nav-list { display:flex; justify-content: space-between;}
+/* 3. Navigation.js - 상단nav  Home / Profile */
+.nav { width: 100%;  height: 50px; box-shadow: 0 2px 4px #000 }
+.nav-list { display:flex; justify-content: space-evenly;}
 .nav-list li { padding: 0 20px; height: 100%; line-height:50px; font-size: 16px;}
+.nav-list li:first-child {color: rgb(0, 110, 255); font-size: 24px; transition: all 0.5s} .nav-list li:first-child:hover {color: #fff;}
+.nav-list li:last-child {width: 300px; text-align :right; color: #ccc; transition: all 0.5s} .nav-list li:last-child:hover {color: #fff;}
+
+/* 4. Profile.js */
+.logout {display: flex; justify-content: center;  margin-top: 48px;}
+/* 닉네임 input / 저장 Btn */
+.logout input { height: 40px;  line-height: 40px; border-radius : 4px; background-color: #000; border : 1px solid #444; color : #eee }
+.logout input:first-child {padding-left: 16px; width: 290px; }
+.logout input:last-child {margin-left: 10px; width: 80px; font-weight: bold; text-align:center; background:rgb(0, 110, 255); cursor: pointer; }
+/* 로그아웃 버튼 */
+.logoutbtn { position:fixed; bottom : 40px; left: 50%; transform: translate(-50%); margin-top: 36px; width:380px; height: 40px;  line-height: 40px; border-radius : 4px; background-color: #151515; color : #eee; border:none; cursor:pointer; transition: all 0.5s}
+.logoutbtn:hover {background : #000}
+
+/* 5. Home.js  */
+.home {display: flex; flex-direction:column; margin-top: 48px; width: 100%; max-width: 1280px; min-width: 320px}
+
+/* 5. NweetFactory.js  */

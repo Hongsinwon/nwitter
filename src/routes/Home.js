@@ -23,12 +23,11 @@ const Home = ({ userObj }) => {
 
   return (
     <>
-    <div>
+    <div className="home">
       <NweetFactory userObj={userObj} />
       {nweets.map(nweet => (
       <>
       <p>{userObj.displayName}님</p>
-      <p>{userObj.date}</p>
       <Nweet 
       key={nweet.id} 
       userName={userObj.displayName}
