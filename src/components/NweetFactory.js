@@ -10,9 +10,6 @@ const NweerFactory = ({userObj}) => {
 const [nweet, setNweet] = useState("");
 const [attachment, setAttachment] = useState("");
 
-const day = new Date();
-const totalDay = day.getFullYear() + "년 " + (day.getMonth()+1) + "월 " + day.getDate() + "일 " +  '일월화수목금토'.charAt(day.getUTCDay())+'요일'
-
   const onSubmit = async (event) => {
     event.preventDefault();
     let attachmentUrl ="";
@@ -32,7 +29,6 @@ const totalDay = day.getFullYear() + "년 " + (day.getMonth()+1) + "월 " + day.
       createdAt: Date.now(),
       creatorId : userObj.uid,
       attachmentUrl,
-      date: totalDay
     }
 
 

@@ -31,11 +31,11 @@ const Auth = () => {
   }
   return (
   <div className="login">
-    <h1><FontAwesomeIcon icon={faTwitter} /></h1>
+    <h1 className="logo"><FontAwesomeIcon icon={faTwitter} /></h1>
     <AuthForm />
     <div className="authBtns">
       <button onClick={onSocislClick} name="google" className="authBtn"><FontAwesomeIcon icon={faGoogle} /> Google로 간편 로그인</button>
-      <button onClick={onSocislClick} name="github" className="authBtn"> <FontAwesomeIcon icon={faGithub} /> GitHub로 간편 로그인</button>
+      <button onClick={onSocislClick} name="github" className="authBtn"><FontAwesomeIcon icon={faGithub} /> GitHub로 간편 로그인</button>
     </div> 
   </div>
 )
