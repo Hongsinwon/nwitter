@@ -20,6 +20,7 @@ const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
         </>
         )}
       </Routes>
+      <address> &copy; Copyright 2022 , Hong sinwon . All Rights Rexerved</address>
     </Router>
   )
 }
