@@ -26,15 +26,14 @@ const Home = ({ userObj }) => {
     <div className="home">
       <NweetFactory userObj={userObj} />
       {nweets.map(nweet => (
-      <>
-      <p>{userObj.displayName}님</p>
+      <div className="content">
       <Nweet 
       key={nweet.id} 
       userName={userObj.displayName}
       nweetObj={nweet} 
       isOwner={nweet.creatorId === userObj.uid}
       />
-      </>
+      </div>
         )
       )}
     </div>

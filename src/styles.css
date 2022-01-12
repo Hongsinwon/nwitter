@@ -1,4 +1,9 @@
-* { margin: 0 auto; padding: 0; box-sizing: border-box; }
+* {margin: 0; padding: 0; box-sizing: border-box; 
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Chrome, Edge, Opera and Firefox */ }
 
 body {
   background-color: #222;
@@ -14,7 +19,7 @@ input { all: unset; box-sizing: border-box; appearance: none;}
 
 /* 리스트 속성 */
 ul { margin: 0;  padding: 0; list-style: none;}
-li { list-style: none;}
+li { list-style: none; margin: 0;  padding: 0; }
 
 a { text-decoration: none; color: inherit;}
 button { background-color: white; color: black;}
@@ -48,8 +53,8 @@ button { background-color: white; color: black;}
 
 /* 3. Navigation.js - 상단nav  Home / Profile */
 .nav { width: 100%;  height: 50px; box-shadow: 0 2px 4px #000 }
-.nav-list { display:flex; justify-content: space-evenly;}
-.nav-list li { padding: 0 20px; height: 100%; line-height:50px; font-size: 16px;}
+.nav-list { margin: 0 auto; display:flex; justify-content: space-between; max-width: 1280px; min-width: 320px; padding: 0 16px;}
+.nav-list li {line-height:50px; font-size: 16px;}
 .nav-list li:first-child {color: rgb(0, 110, 255); font-size: 24px; transition: all 0.5s} .nav-list li:first-child:hover {color: #fff;}
 .nav-list li:last-child {width: 300px; text-align :right; color: #ccc; transition: all 0.5s} .nav-list li:last-child:hover {color: #fff;}
 
@@ -63,7 +68,38 @@ button { background-color: white; color: black;}
 .logoutbtn { position:fixed; bottom : 40px; left: 50%; transform: translate(-50%); margin-top: 36px; width:380px; height: 40px;  line-height: 40px; border-radius : 4px; background-color: #151515; color : #eee; border:none; cursor:pointer; transition: all 0.5s}
 .logoutbtn:hover {background : #000}
 
-/* 5. Home.js  */
-.home {display: flex; flex-direction:column; margin-top: 48px; width: 100%; max-width: 1280px; min-width: 320px}
+/* 5. Home.js  - 트윗한 내용 */ 
+.home {display: flex; flex-direction:column; width: 100%;}
 
-/* 5. NweetFactory.js  */
+/* 6. NweetFactory.js -트윗 작성 */
+.nweetcontnet {width:100%; box-sizing: border-box;  background: #111; box-shadow: 0 2px 4px #000;}
+.nweetform {position: relative; margin: 0 auto; padding: 0 16px; max-width: 1280px; min-width: 320px }
+.nweetinput {margin-top: 24px; padding:8px 12px; width:100%; height: 140px; border : 1px solid #444; border-radius: 4px; background: #000; color: #fff;}
+.nweetinput:focus { border: 2px solid rgb(0, 110, 255);} 
+.flie {display: none;}
+.fliebtn {position: absolute; right:24px; bottom: 94px; padding : 1.5px 14px 0; height: 35px; line-height: 35px; background:#222; border-radius:4px; border:none; cursor:pointer; transition : all 0.5s;}
+.fliebtn:hover {background: rgb(0, 110, 255); color: #fff;} .fliebtn i {font-size: 18px; } 
+.nweet {margin : 16px 0 24px; width:100%; height: 40px; text-align:center; font-size: 16px; letter-spacing: 10px; font-weight:bold; background:  rgb(0, 56, 129); color: #fff; cursor:pointer; transition : all 0.5s;}
+.nweet:hover {background-color : rgb(0, 110, 255);}
+.fileimg {margin-top: 16px; width:100%; }
+.cancelimg{ margin-top: 8px; width:100%; height: 40px; text-align:center; border:1px solid rgb(255, 0, 0) ; border-radius: 4px; ; background-color: #111; color: rgb(255, 0, 0); cursor:pointer; transition : all 0.5s;}
+
+
+/* 7. Nweet - 트윗/수정 */
+.content {width: 100%;}
+/* 보이는 트윗 */
+.textwarp { border-bottom: 20px solid #111 }
+.textcontent {position: relative; margin: 0 auto; padding: 20px 16px;  max-width: 1280px; min-width: 320px; }
+.contentimg { width: 100%; margin-bottom: 16px;}
+.todaytitle { color: rgb(0, 110, 255); font-weight: bold;}
+.nickname { position:absolute; right:16px; color: #ddd; font-weight:normal}
+.text {margin: 12px 0 16px; padding: 12px 10px; font-weight: normal; background: #111; color:#eee; border-radius: 4px}
+/* 보이는 트윗 & 수정트윗 하단버튼 */
+.setting {display: flex; justify-content: flex-end;}
+.setting button, .setting input {padding: 3px 20px; border-radius:4px; cursor:pointer}
+.correction {border:1px solid #aaa; color:#aaa; background-color: #222;}
+.complete {border:1px solid rgb(0, 56, 129); color:#fff; background-color: rgb(0, 56, 129); font-weight: bold;}
+.delete, .cencebtn {margin-left:10px; border:1px solid rgb(255, 0, 0); color:rgb(255, 0, 0); background-color: #222; }
+/* 수정트윗 */
+.correctioninput {margin-bottom: 16px; padding:8px 12px; width:100%; height: 140px; border : 1px solid #444; border-radius: 4px; background: #000; color: #fff;}
+.correctioninput:focus { border: 2px solid rgb(0, 110, 255);} 

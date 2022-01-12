@@ -4,7 +4,7 @@ import { doc, deleteDoc, updateDoc }from"firebase/firestore";
 import { deleteObject, ref } from "@firebase/storage";
 
 //isOwner는 다이나믹한 props이고 true & false가 될 수 있다.
-const Nweet = ({nweetObj, isOwner}) => {
+const Nweet = ({nweetObj, isOwner, userName}) => {
 
   //editing는 기본적으로 nweet를 수정하고 있는지 아닌지를 뜻한다.
   const [editing, setEditing] = useState(false);
@@ -42,30 +42,38 @@ const onChange = (event) => {
   <div>
     {
       editing ? (
-      <>
-        <form onSubmit={onSubmit}>
-           <input 
+      <div className="textwarp">
+        <div className="textcontent">
+        <form onSubmit={onSubmit}  >
+           <textarea
+            className="correctioninput"
               type="text" 
               placeholder="수정할 내용을 입력해주세요." 
               value={newNweet} 
               onChange={onChange}
               required 
           />
-          <input type="submit" value="수정완료" />
+          <div className="setting">
+          <input type="submit" value="수정완료" className="complete"/>
+          <button onClick={toggleEditing} className="cencebtn">취소</button>
+          </div>
           </form>
-          <button onClick={toggleEditing}>취소</button>
-      </>
+          </div>
+      </div>
       ) :(
-      <>
-        <h4>{nweetObj.text}</h4>
-        {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} width="50px" height="50px"/>}
+      <div className="textwarp">
+        <div className="textcontent">
+        {nweetObj.attachmentUrl && <img className="contentimg" src={nweetObj.attachmentUrl} />}
+        <p className="todaytitle">[ 오늘의 기록 ]  <span className="nickname">{userName}님 작성</span></p>
+        <h4 className="text">{nweetObj.text}</h4>
       {isOwner && (
-      <>
-        <button onClick={onDeleteClick}>삭제</button> 
-        <button onClick={toggleEditing}>수정</button>
-     </>
+      <div className="setting">
+        <button className="correction" onClick={toggleEditing}>수정</button>
+        <button className="delete" onClick={onDeleteClick}>삭제</button> 
+     </div>
     )}
-    </>
+    </div>
+    </div>
       )
     }
   </div>
