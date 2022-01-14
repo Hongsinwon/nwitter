@@ -20,7 +20,6 @@ const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
         </>
         )}
       </Routes>
-      
     </HashRouter>
   )
 }
