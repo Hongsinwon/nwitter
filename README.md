@@ -1,8 +1,7 @@
 <p>[개인 프로젝트] 2021.12.20 ~
 </br>사용언어 - html, css, React.js, firebase </p>
 
-<h1>트위터 클론 코딩 - Nwitter</h1>
-https://hongsinwon.github.io/nwitter/#/
+<h1>트위터 클론 코딩 - Nwitter https://hongsinwon.github.io/nwitter/#/ </h1>
 <p>[2021.12.20(월) - 1 일차] - 기본 셋팅</p>
 <p>[2021.12.21(화) - 2 일차] - firebase연결 + Router설정</p>
 <p>[2021.12.22(수) - 3 일차] - 로그인 + 간편로그인 + 로그아웃 기능구현</p>
