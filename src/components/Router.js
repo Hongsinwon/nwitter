@@ -1,4 +1,4 @@
-import {HashRouter as Router, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
@@ -6,7 +6,7 @@ import Navigation from "components/Navigation";
 
 const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
   return (
-    <Router>
+    <HashRouter base="/">
       {isLoggedIn && <Navigation userObj={userObj}/>}
       <Routes>
         {isLoggedIn ? (
@@ -21,7 +21,7 @@ const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
         )}
       </Routes>
       <address> &copy; Copyright 2022 , Hong sinwon . All Rights Rexerved</address>
-    </Router>
+    </HashRouter>
   )
 }
 
