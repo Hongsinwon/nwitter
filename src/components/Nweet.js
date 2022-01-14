@@ -64,6 +64,7 @@ const onChange = (event) => {
       <div className="textwarp">
         <div className="textcontent">
         {nweetObj.attachmentUrl && <img className="contentimg" src={nweetObj.attachmentUrl} />}
+        <p className="todaytitle">[ 오늘의 기록 ]</p>
         <h4 className="text">{nweetObj.text}</h4>
       {isOwner && (
       <div className="setting">

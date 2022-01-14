@@ -92,7 +92,6 @@ button { background-color: white; color: black;}
 .textcontent {position: relative; margin: 0 auto; padding: 20px 16px;  max-width: 1280px; min-width: 320px; }
 .contentimg { width: 100%; margin-bottom: 16px;}
 .todaytitle { color: rgb(0, 110, 255); font-weight: bold;}
-.nickname { position:absolute; right:16px; color: #ddd; font-weight:normal}
 .text {margin: 12px 0 16px; padding: 12px 10px; font-weight: normal; background: #111; color:#eee; border-radius: 4px}
 /* 보이는 트윗 & 수정트윗 하단버튼 */
 .setting {display: flex; justify-content: flex-end;}
