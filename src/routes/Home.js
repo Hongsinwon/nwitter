@@ -37,6 +37,7 @@ const Home = ({ userObj }) => {
         )
       )}
     </div>
+    <address> &copy; Copyright 2022 , Hong sinwon . All Rights Rexerved</address>
     </>
   )
 }
