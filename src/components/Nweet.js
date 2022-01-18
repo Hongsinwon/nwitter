@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc }from"firebase/firestore";
 import { deleteObject, ref } from "@firebase/storage";
+import SimpleDateTime from "react-simple-timestamp-to-date";
 
 //isOwner는 다이나믹한 props이고 true & false가 될 수 있다.
-const Nweet = ({nweetObj, isOwner, userName}) => {
+const Nweet = ({nweetObj, isOwner, userObj}) => {
 
   //editing는 기본적으로 nweet를 수정하고 있는지 아닌지를 뜻한다.
   const [editing, setEditing] = useState(false);
@@ -64,8 +65,14 @@ const onChange = (event) => {
       <div className="textwarp">
         <div className="textcontent">
         {nweetObj.attachmentUrl && <img className="contentimg" src={nweetObj.attachmentUrl} />}
-        <p className="todaytitle">[ 오늘의 기록 ]</p>
+        <p className="todaytitle">[ 오늘의 기록 ]         
+        <span className="date">
+            <SimpleDateTime dateSeparator="/" timeSeparator=":" format="YMD" meridians="1">
+            {nweetObj.createdAt/1000}</SimpleDateTime>
+        </span>
+        </p>
         <h4 className="text">{nweetObj.text}</h4>
+
       {isOwner && (
       <div className="setting">
         <button className="correction" onClick={toggleEditing}>수정</button>
