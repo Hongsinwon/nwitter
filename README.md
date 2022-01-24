@@ -3,6 +3,7 @@
 
 <h1>트위터 클론 코딩 - Nwitter https://hongsinwon.github.io/nwitter/#/ </h1>
 
+[ 구현기능 ]
 1. 로그인 + 로그아웃
 2. 간편로그인 ( 구글 / 깃허브 )
 3. 프로필
