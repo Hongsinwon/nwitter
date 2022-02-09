@@ -38,7 +38,7 @@
 
 
 #### 2. 메인 페이지
-![메인](nwitter-image/main.png)</br>
+![메인](nwitter-image/main.png)</br> </br>
 ![이미지작성](nwitter-image/img.png)
 ![수정](nwitter-image/edit.png)
 
