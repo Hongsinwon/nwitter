@@ -36,14 +36,20 @@
 #### 1. 로그인
 ![로그인창](nwitter-image/login.png)
 
+ </br>
 
 #### 2. 메인 페이지
 ![메인](nwitter-image/main.png)
+
+ </br>
 
 #### 3. 이미지 업로드 + 글 수정
 ![이미지작성](nwitter-image/img.png)
 ![수정](nwitter-image/edit.png)
 
+ </br>
 
 #### 4. 마이페이지 & 로그아웃
 ![마이페이지](nwitter-image/profile.png)
+
+ </br>
