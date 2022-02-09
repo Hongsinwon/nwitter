@@ -34,9 +34,14 @@
 
 
 #### 1. 로그인
+![로그인창](nwitter-images/login.png)
 
 
 #### 2. 메인 페이지
+![메인](nwitter-images/main.png)</br>
+![이미지작성](nwitter-images/img.png)
+![수정](nwitter-images/edit.png)
 
 
 #### 3. 마이페이지 & 로그아웃
+![마이페이지](nwitter-images/profile.png)
